@@ -33,11 +33,8 @@ RUN docker-php-ext-configure gd --with-freetype --with-jpeg \
     && docker-php-ext-install pdo_mysql \
     && docker-php-ext-install mysqli \
     && docker-php-ext-install opcache \
-    && docker-php-ext-install bcmath
-
-# php.ini 文件
-RUN mv "$PHP_INI_DIR/php.ini-production" "$PHP_INI_DIR/php.ini"
+    && docker-php-ext-install bcmath \
+    # php.ini 文件
+    && cp "$PHP_INI_DIR/php.ini-production" "$PHP_INI_DIR/php.ini"
 
 WORKDIR /www/wwwroot
-
-EXPOSE 9501
