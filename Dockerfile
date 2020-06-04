@@ -16,6 +16,7 @@ RUN apt-get update && apt-get install -y \
         libpng-dev \
         libssl-dev \
         libmemcached-dev \
+        git \
     && apt-get autoclean && apt-get clean
 
 # 扩展
