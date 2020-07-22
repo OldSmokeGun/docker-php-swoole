@@ -29,8 +29,9 @@ RUN docker-php-ext-configure gd --with-freetype --with-jpeg \
     && pecl install memcached-$PHP_MEMCACHED_VERSION \
     # php-notify 扩展
     && pecl install inotify-$PHP_INOTIFY_VERSION \
+    && docker-php-ext-install sockets \
     # swoole 扩展
-    && pecl install swoole-$PHP_SWOOLE_VERSION \
+    && yes "yes" | pecl install swoole-$PHP_SWOOLE_VERSION \
     && docker-php-ext-enable redis memcached inotify swoole \
     && docker-php-ext-install pdo_mysql \
     && docker-php-ext-install mysqli \
