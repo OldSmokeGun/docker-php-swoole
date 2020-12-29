@@ -1,7 +1,6 @@
 # `php-swoole`
 
 - 基于官方 `php:7.4.0-cli` 镜像构建的 `php-swoole` 镜像
-- 附带 `composer`
 
 # 安装扩展
 
